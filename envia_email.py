@@ -10,7 +10,7 @@ from email.MIMEText import MIMEText
 
 # FUNCAO ENVIA EMAIL
 def envia_email(recebe1,recebe2):
-    # DEFINA AS VARIAVEIS ABAIXO DE ACORDO COM O SEU AMBIENTE
+    # Defina as variaveis da conta de email.
     SMTP    =   "smtp.dominio.com.br"
     PORTA   =   "26"
     LOGIN   =   "conta@dominio.com.br"
