@@ -1,2 +1,2 @@
 # mysqldump
-# Script de Backup por Databases e Tabelas com Report por Email
+Script de Backup por Databases e Tabelas com Report por Email
