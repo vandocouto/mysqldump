@@ -8,7 +8,7 @@ import commands
 import datetime
 from envia_email import envia_email
 
-#INSIRA AQUI OS DADOS DO SERVIDOR MYSQL 
+#Insira os dados do servidor mysql 
 HOST = '127.0.0.1'
 USER = 'root'
 PASSWORD = 'senha-banco'
@@ -17,7 +17,7 @@ BARRA = '/'
 DOIS_PONTOS = ":"
 EMAIL= "email@dominio.com.br"
 
-#DEFINA A VARIAVEL PARA APAGAR O BKP'S ANTIGOS APÓS:
+#Defina a quantidade de dias que pretende guardar os backups.
 DIAS_ATRAS = 3
 
 #Verifica se existe o diretório de armazenamento dos Dump's.
