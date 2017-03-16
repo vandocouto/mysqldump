@@ -62,9 +62,9 @@ for base in databases:
                 	#if os.system('mysqldump -h %s -u %s -p%s -x -e %s | gzip > %s/%s.sql.gz' %(host,user,password,base[0],dir_date,base[0])) == 0:
 			# not password
                 	if os.system('mysqldump -h %s -u %s -x -e %s | gzip > %s/%s.sql.gz' %(host,user,base[0],dir_date,base[0])) == 0:
-                   		messages += "<tr><td>%s</td><td>%s</td><td>%s</td><td><b style='color:green'>OK</b></td></tr>" %(hour,base[0],i[0])
+                   		messages += "<tr><td>%s</td><td>%s</td><td><b style='color:green'>OK</b></td></tr>" %(hour,base[0])
                 	else:
-                     		messages += "<tr><td>%s</td><td>%s</td><td>%s</td><td><b style='color:red'>NOT</b></td></tr>" %(hour,base[0],i[0])
+                     		messages += "<tr><td>%s</td><td>%s</td><td><b style='color:red'>NOT</b></td></tr>" %(hour,base[0])
 	except:
     		continue
 messages += "</table>"
