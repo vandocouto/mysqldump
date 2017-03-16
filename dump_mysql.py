@@ -78,7 +78,7 @@ if os.path.exists(path + bar + dateold):
 
 # aws s3
 dir_date = (path)
-os.system('aws s3 cp %s s3://%s --recursive' %(dir_date,bucket))
+os.system('aws s3 sync %s s3://%s' %(dir_date,bucket))
 os.system('aws s3 rm s3://%s/%s --recursive' %(bucket,dateold)) 
 
 # function email
