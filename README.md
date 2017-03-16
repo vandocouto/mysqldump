@@ -13,6 +13,7 @@ user 		= 'user'
 password 	= 'password'
 path 		= '/MYSQL_dump'
 email		= "email@domain.com"
+bucket 		= "your-bucket"
 </pre>
 
 ### send_email.py

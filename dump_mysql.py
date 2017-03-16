@@ -16,6 +16,7 @@ path = '/storage/MYSQL_dump'
 bar = '/'
 tpoint = ":"
 email= "login@gmail.com"
+bucket = "your-bucket"
 
 # retention
 days_ago = 3
@@ -77,8 +78,8 @@ if os.path.exists(path + bar + dateold):
 
 # aws s3
 dir_date = (path)
-os.system('aws s3 cp %s s3://d2d-mysqldump --recursive' %(dir_date))
-os.system('aws s3 rm s3://d2d-mysqldump/%s --recursive' %(dateold)) 
+os.system('aws s3 cp %s s3://%s --recursive' %(dir_date,bucket))
+os.system('aws s3 rm s3://%s/%s --recursive' %(bucket,dateold)) 
 
 # function email
 send_email(email,messages)
