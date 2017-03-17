@@ -23,7 +23,7 @@ days_ago = 3
 
 # check if existing is directory
 if os.path.exists(path):
-    log = 'Dir ja existe'
+    log = 'directory existing'
 else:
     os.mkdir(path) 
     
