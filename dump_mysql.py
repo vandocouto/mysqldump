@@ -9,17 +9,17 @@ import datetime
 from send_email import send_email
 
 # variables mysql
-host = '192.168.0.103'
+host = '127.0.0.1'
 user = 'root'
-password = 'password'
-path = '/storage/MYSQL_dump'
+password = ''
+path = '/opt/backup/MYSQL_dump'
 bar = '/'
 tpoint = ":"
-email= "login@gmail.com"
-bucket = "your-bucket"
+email= "tecnologia@cntlog.com.br"
+bucket = "mysqldumpcntlog"
 
 # retention
-days_ago = 3
+days_ago = 5
 
 # check if existing is directory
 if os.path.exists(path):
@@ -45,7 +45,7 @@ os.mkdir(dir_date)
 # password
 #db = MySQLdb.connect(host, user, password)
 # not password
-db = MySQLdb.connect(host, user )
+db = MySQLdb.connect()
 cursor = db.cursor()
 cursor.execute("show databases")
 databases = cursor.fetchall()
@@ -58,10 +58,8 @@ for base in databases:
 	try:
         	if base[0] != 'information_schema' and base[0] != 'performance_schema':
                 	print base[0]
-			# password
-                	#if os.system('mysqldump -h %s -u %s -p%s -x -e %s | gzip > %s/%s.sql.gz' %(host,user,password,base[0],dir_date,base[0])) == 0:
 			# not password
-                	if os.system('mysqldump -h %s -u %s -x -e %s | gzip > %s/%s.sql.gz' %(host,user,base[0],dir_date,base[0])) == 0:
+                	if os.system('mysqldump -x -e %s | gzip > %s/%s.sql.gz' %(base[0],dir_date,base[0])) == 0:
                    		messages += "<tr><td>%s</td><td>%s</td><td><b style='color:green'>OK</b></td></tr>" %(hour,base[0])
                 	else:
                      		messages += "<tr><td>%s</td><td>%s</td><td><b style='color:red'>NOT</b></td></tr>" %(hour,base[0])
