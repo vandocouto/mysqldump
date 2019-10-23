@@ -15,8 +15,8 @@ password = ''
 path = '/opt/backup/MYSQL_dump'
 bar = '/'
 tpoint = ":"
-email= "tecnologia@cntlog.com.br"
-bucket = "mysqldumpcntlog"
+email= ""
+bucket = ""
 
 # retention
 days_ago = 5
