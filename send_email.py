@@ -13,9 +13,9 @@ def send_email(receive1,receive2):
 	# variables
     	SMTP    =   "smtp.gmail.com"
     	port   =   "587"
-    	login   =   "monitorcntlog@gmail.com"
-    	email   =   "monitorcntlog"
-    	PASS    =   "cnt@2019"
+    	login   =   ""
+    	email   =   ""
+    	PASS    =   ""
 	# email
   	SMTPSERVER = smtplib.SMTP
         port = str(port)
@@ -38,5 +38,5 @@ def send_email(receive1,receive2):
         serv.quit()
   
 # execute function
-# send_email("vandocouto@gmail.com,tecnologia@cntlog.com.br", "cntlog")
+# send_email("vandocouto@gmail.com", "cntlog")
 
